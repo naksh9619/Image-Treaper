@@ -1571,6 +1571,8 @@ mveli
 sepha
 lisim
 stosi
+itor
+
 lfrin
 isisj
 svest
