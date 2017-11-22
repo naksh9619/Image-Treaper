@@ -82,7 +82,7 @@ count = 0
 for i in range(1 , 4):
 	FileName = "test" + str(i) + ".txt"
 	#print(FileName)
-	readtextFile = open(FileName,'r')
+	readtextFile = open("testFiles/" + FileName,'r')
 	message = readtextFile.read()
 	message = parseMessage(message)
 	#print(message)
@@ -94,7 +94,7 @@ for i in range(1 , 4):
 	FileName = "shingles" + str(i) + ".txt"
 	#print(FileName)
 	countOfShingles = 0
-	writeTextFile = open(FileName,'w')
+	writeTextFile = open("shingleFiles/" + FileName,'w')
 	for shingle in shingles:
 		countOfShingles += 	1
 		if(shingle not in UniqueShingles):
@@ -113,7 +113,7 @@ charactersticMatrix = [[0 for x in range(4)] for y in range(len(MatrixBeg) + 1)]
 #print(charactersticMatrix)
 for i in range(1 , 4):
 	FileName = "shingles" + str(i) + ".txt"
-	readtextFile = open(FileName,"r")
+	readtextFile = open("shingleFiles/" + FileName,"r")
 	message = readtextFile.read()
 	for j in range(0 , 6448):
 		#print(MatrixBeg[j])
