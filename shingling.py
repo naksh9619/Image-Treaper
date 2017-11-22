@@ -90,7 +90,6 @@ for i in range(1 , 4):
 	shingles = ComputeShingles(message)
 	#print(shingles)
 	readtextFile.close()
-	
 	FileName = "shingles" + str(i) + ".txt"
 	#print(FileName)
 	countOfShingles = 0
