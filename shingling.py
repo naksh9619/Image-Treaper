@@ -26,7 +26,7 @@ def parseMessage(data):
 	lenData = len(data)
 	for idx , token in enumerate(data):
 		if(data[idx] != '.' and data[idx] != ',' and data[idx] != ' ' and 
-			data[idx] != '-' and data[idx] != '(' and data[idx] != ')'):
+			data[idx] != '-' and data[idx] != '(' and data[idx] != ')' and data[idx]!='/' and data[idx]!='+'):
 			parsedMessage += (data[idx])
 	return parsedMessage
 
@@ -79,10 +79,10 @@ def findsignatureMatrix(data , args):
 UniqueShingles = set()
 MatrixBeg = []
 count = 0
-for i in range(1 , 4):
+for i in range(1 , 6):
 	FileName = "test" + str(i) + ".txt"
 	#print(FileName)
-	readtextFile = open("testFiles/" + FileName,'r')
+	readtextFile = open("testFiles/"+FileName,'r')
 	message = readtextFile.read()
 	message = parseMessage(message)
 	#print(message)
@@ -102,22 +102,27 @@ for i in range(1 , 4):
 			UniqueShingles.add(shingle)
 		writeTextFile.write(shingle)
 		writeTextFile.write("\n")
-	#print(countOfShingles) #2353 2725 2077
+	#print(countOfShingles) #137711 151915 128251 43708 50345
+
 	writeTextFile.close()
 #print(len(UniqueShingles))
 #print(len(MatrixBeg))
 #print(MatrixBeg)
-charactersticMatrix = [[0 for x in range(4)] for y in range(len(MatrixBeg) + 1)] 
+charactersticMatrix = [[0 for x in range(6)] for y in range(len(MatrixBeg))] 
 
 #print(charactersticMatrix)
-for i in range(1 , 4):
+for i in range(1 , 6):
+	print("processing shingle" + str(i))
 	FileName = "shingles" + str(i) + ".txt"
 	readtextFile = open("shingleFiles/" + FileName,"r")
 	message = readtextFile.read()
-	for j in range(0 , 6448):
+	for j in range(0 , len(MatrixBeg)):
+		#print("i am here")
 		#print(MatrixBeg[j])
 		if(MatrixBeg[j][0] in message):
 			charactersticMatrix[j][i] = 1
+		#print("processing"+str(j))
+	#print("end of shingle"+str(i))
 	readtextFile.close()
 #for i in charactersticMatrix:
 #	print(i)

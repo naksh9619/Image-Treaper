@@ -33,4 +33,4 @@ def computejaccardSimilarity(signatureMatrix):
 
 jaccardSimilarity,jaccardSimilarityAuto = computejaccardSimilarity(sigMatrix)
 print("Manually calculated:" , jaccardSimilarity)
-print("Model calculated :" , jaccardSimilarityAuto)
+print("Model calculated:" , jaccardSimilarityAuto)
