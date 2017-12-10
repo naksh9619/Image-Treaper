@@ -1,5 +1,5 @@
 
-
+import distance
 def parseMessage(data):
 	parsedMessage = ""
 	lenData = len(data)
@@ -28,6 +28,7 @@ def padExtra(set1 , set2):
 
 def ComputeScore(set1 ,set2):
 	score = 0
+	scoreAuto = 0
 	#print("length before:",len(set1) , len(set2))
 	if(len(set1) > len(set2)):
 		set1 , set2 = set2 , set1
@@ -36,17 +37,21 @@ def ComputeScore(set1 ,set2):
 	for set1Char,set2Char in zip(set1 , set2):
 		if(set1Char != set2Char):
 			score += 1
+	scoreAuto = distance.hamming(set1,set2)
 	#print("length after:" , len(set1) , len(set2) , score)
-	return score
+	return score , scoreAuto
 
 def getHammingSimilarity(stringArray):
 	similarityMat = []
+	similarityMat2 = []
 	for i in range(4):
 		for j in range(i + 1 , 5):
-			score = ComputeScore(stringArray[i] , stringArray[j])
+			score , scoreAuto= ComputeScore(stringArray[i] , stringArray[j])
 			similarityMat.append(score)
-	return similarityMat
+			similarityMat2.append(scoreAuto)
+	return similarityMat , similarityMat2
 
 stringArray = getStrings()
-hammingSimilarity = getHammingSimilarity(stringArray)
+hammingSimilarity , hammingSimilarityAuto = getHammingSimilarity(stringArray)
 print("Manually calculated:" , hammingSimilarity)
+print("Model calculated:" , hammingSimilarityAuto)
