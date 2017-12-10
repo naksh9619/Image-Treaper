@@ -34,10 +34,10 @@ def ComputeScore(set1 ,set2):
 		set1 , set2 = set2 , set1
 	if(len(set1) != len(set2)):
 		set1 , set2 = padExtra(set1 , set2)
-	for set1Char,set2Char in zip(set1 , set2):
+	for set1Char , set2Char in zip(set1 , set2):
 		if(set1Char != set2Char):
 			score += 1
-	scoreAuto = distance.hamming(set1,set2)
+	scoreAuto = distance.hamming(set1 , set2)
 	#print("length after:" , len(set1) , len(set2) , score)
 	return score , scoreAuto
 
