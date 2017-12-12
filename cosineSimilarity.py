@@ -66,6 +66,6 @@ for i in range(len(frequency)):
 	print("NonZero in row " + str(i) + " are " ,countNonZero)
 #print(frequency)
 '''
-cosineSimilarity , cosineSimilarityAuto = computecosineSimilarity(frequency)
-print("Manually calculated:" , cosineSimilarity)
-print("Model calculated:" , cosineSimilarityAuto)
+cosinesimilarity , cosinesimilarityAuto = computecosineSimilarity(frequency)
+print("Manually calculated:" , cosinesimilarity)
+print("Model calculated:" , cosinesimilarityAuto)

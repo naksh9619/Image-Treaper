@@ -52,6 +52,6 @@ def getHammingSimilarity(stringArray):
 	return similarityMat , similarityMat2
 
 stringArray = getStrings()
-hammingSimilarity , hammingSimilarityAuto = getHammingSimilarity(stringArray)
-print("Manually calculated:" , hammingSimilarity)
-print("Model calculated:" , hammingSimilarityAuto)
+hammingsimilarity , hammingsimilarityAuto = getHammingSimilarity(stringArray)
+print("Manually calculated:" , hammingsimilarity)
+print("Model calculated:" , hammingsimilarityAuto)

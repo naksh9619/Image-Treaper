@@ -32,6 +32,6 @@ def computeeuclideanSimilarity(freqMatrix):
 	return similarityMat,similarityMat2
 
 
-euclideanSimilarity , euclideanSimilarityAuto = computeeuclideanSimilarity(frequency)
-print("Manually calculated:" , euclideanSimilarity)
-print("Model calculated:" , euclideanSimilarityAuto)
+euclideansimilarity , euclideansimilarityAuto = computeeuclideanSimilarity(frequency)
+print("Manually calculated:" , euclideansimilarity)
+print("Model calculated:" , euclideansimilarityAuto)
