@@ -41,6 +41,6 @@ for row in matrixReader:
 	sigMatrix.append(row)
 
 
-jaccardSimilarity,jaccardSimilarityAuto = computejaccardSimilarity(sigMatrix)
-print("Manually calculated:" , jaccardSimilarity)
-print("Model calculated:" , jaccardSimilarityAuto)
+jaccardsimilarity,jaccardsimilarityAuto = computejaccardSimilarity(sigMatrix)
+print("Manually calculated:" , jaccardsimilarity)
+print("Model calculated:" , jaccardsimilarityAuto)
